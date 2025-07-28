@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pypdf
+langchain
+sentence-transformers
+chromadb
+python-multipart
+SQLAlchemy # We'll remove this eventually, but keep it for comparison in this example
+pydantic
+google-generativeai
+python-dotenv
+pymongo # New
+dnspython # New, useful for MongoDB Atlas SRV records

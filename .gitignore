@@ -1,0 +1,14 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.log
+
+# Environment variables
+.env
+
+# Uploaded documents and database files (local persistence)
+uploaded_documents/
+chroma_db/
+# MongoDB Docker volume data (if managed directly in project root)
+mongodb_data/
