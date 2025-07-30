@@ -2,12 +2,14 @@ fastapi
 uvicorn
 pypdf
 langchain
+langchain-community==0.2.5
 sentence-transformers
 chromadb
 python-multipart
-SQLAlchemy # We'll remove this eventually, but keep it for comparison in this example
+SQLAlchemy 
 pydantic
 google-generativeai
 python-dotenv
 pymongo # New
-dnspython # New, useful for MongoDB Atlas SRV records
+dnspython 
+pysqlite3-binary==0.5.4

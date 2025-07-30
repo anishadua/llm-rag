@@ -1,0 +1,35 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # --- FastAPI Application Service ---
+  rag-app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - uploaded_documents_data:/app/uploaded_documents
+      - chroma_db_data:/app/chroma_db
+      - ./.env:/app/.env
+    environment:
+      MONGO_URI: mongodb://mongo:27017/
+      MONGO_DB_NAME: ragsystem_db
+      MONGO_COLLECTION_NAME: document_metadata
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo
+    restart: on-failure
+
+  # --- MongoDB Database Service ---
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  uploaded_documents_data:
+  chroma_db_data:
+  mongodb_data:
